@@ -1,0 +1,18 @@
+.InputLabel {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  color: #a7a7a7;
+  transition: 0.25s;
+  font-size: 1rem;
+}
+
+.Empty {
+  transform: translate(2rem, 1.175rem);
+}
+
+.NotEmpty {
+  transform: translate(0, -0.5rem) scale(0.75, 0.75);
+}

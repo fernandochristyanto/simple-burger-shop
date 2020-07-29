@@ -1,0 +1,30 @@
+.InputBox {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  border: 0;
+  border-bottom: 1px solid #c7c7c7;
+  background: transparent;
+  color: #606060;
+  text-indent: 2rem;
+}
+
+.InputBox::placeholder {
+  color: #a7a7a7;
+}
+
+.InputBox:focus {
+  outline: none;
+  border-color: #d32626;
+}
+
+.InputBox:focus ~ span {
+  color: #d32626;
+}
+
+.InputBox:focus ~ div {
+  transform: translate(0, -0.5rem) scale(0.75, 0.75);
+  color: #d32626;
+}
