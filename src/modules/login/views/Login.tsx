@@ -5,7 +5,7 @@ import { Card, CardTitle } from '../../../components/card'
 import LoginButton from '../components/loginButton/LoginButton';
 import NewInput from '../../../components/newInput/NewInput';
 
-class Login extends Component {
+class Login extends Component<any> {
   state = {
     username: '',
     password: '',
