@@ -1,0 +1,11 @@
+.ValidationMessage {
+  margin-top: 0.25rem;
+  color: red;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.ValidationMessage > span:last-child {
+  margin: 0 0.5rem;
+}

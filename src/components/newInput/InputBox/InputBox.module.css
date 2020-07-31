@@ -24,7 +24,7 @@
   color: #d32626;
 }
 
-.InputBox:focus ~ div {
+.InputBox:focus + div {
   transform: translate(0, -0.5rem) scale(0.75, 0.75);
   color: #d32626;
 }

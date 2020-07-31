@@ -5,4 +5,5 @@ export interface INewInputProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: string,
   label?: string,
   isEmpty?: boolean,
+  errorMessage?: string | null,
 }
