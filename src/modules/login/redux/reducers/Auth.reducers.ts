@@ -2,7 +2,7 @@ import { IDefaultState, IDefaultAction } from "../../../../interfaces";
 import initialDefaultState from "../../../../constants/InitialDefaultState";
 import initialDefaultAction from "../../../../constants/InitialDefaultAction";
 import { DO_LOGIN, DO_LOGIN_SUCCESS, DO_LOGIN_FAILED } from "../../constants";
-import { IAuth } from "../../interfaces";
+import { IAuth } from "../../../../interfaces";
 
 export const authReducer = (
   state: IDefaultState<IAuth> = initialDefaultState,

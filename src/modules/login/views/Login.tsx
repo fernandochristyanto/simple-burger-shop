@@ -73,7 +73,7 @@ class Login extends Component<ILoginProps> {
                   onChange={(e) => this.setState({ password: e.target.value })}
                   errorMessage={this.state.validationMessage.password}
                 />
-                <LoginButton onClick={(e) => this.loginHandler(e)} />
+                <LoginButton onClick={(e) => this.loginHandler(e)} disabled={this.props.auth.fetch} />
               </form>
             </Card>
           </div>

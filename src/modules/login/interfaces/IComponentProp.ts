@@ -1,6 +1,5 @@
-import { IAuth } from "./IAuth";
 import { IDoLoginParam } from "./IParams";
-import { IDefaultState } from "../../../interfaces";
+import { IDefaultState, IAuth } from "../../../interfaces";
 
 export declare interface ILoginProps {
   children?: React.ReactNode,
