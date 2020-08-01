@@ -1,15 +1,27 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { Component, ReactNode } from 'react';
+import { Switch, withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { defaultLayoutRoute } from '../../config/index';
+import { connect } from 'react-redux';
+import ProtectedRoute from '../protectedRoute/ProtectedRoute';
+import { IAuth, IDefaultState } from '../../interfaces';
 
-class DefaultLayout extends Component {
+declare interface IDefaultLayoutProps extends RouteComponentProps {
+  children?: ReactNode,
+  auth: IDefaultState<IAuth>,
+}
+
+class DefaultLayout extends Component<IDefaultLayoutProps> {
+  componentDidMount() {
+    if (!this.props.auth.res) this.props.history.push('/login')
+  }
+
   render() {
     return (
       <React.Fragment>
         <Switch>
           {defaultLayoutRoute.map((route, index) => (
-            <Route
+            <ProtectedRoute
               key={index}
               path={route.path}
               exact={route.exact}
@@ -20,10 +32,16 @@ class DefaultLayout extends Component {
             />
           ))}
         </Switch>
-      This is default Layout
+        Hello, {this.props.auth.res?.fullname}
       </React.Fragment>
     )
   }
 }
 
-export default DefaultLayout
+const mapStateToProps = (state: any) => {
+  return {
+    auth: state.auth,
+  }
+}
+
+export default connect(mapStateToProps)(withRouter(DefaultLayout))
