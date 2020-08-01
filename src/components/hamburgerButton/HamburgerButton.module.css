@@ -1,0 +1,40 @@
+.HamburgerButton {
+  display: flex;
+  cursor: pointer;
+  width: 25px;
+  height: 18px;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 19px 16px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.HamburgerButton > div {
+  width: 25px;
+  height: 2px;
+  background: black;
+  transition: all 1s ease-in-out;
+}
+
+.HamburgerButton.Open > div:first-child {
+  transform: translate(0px, 8px) rotateY(180deg) rotateZ(45deg);
+  background: #d23636;
+}
+
+.HamburgerButton.Open > div:nth-child(2) {
+  opacity: 0;
+}
+
+.HamburgerButton.Open > div:last-child {
+  transform: translate(0px, -8px) rotateY(180deg) rotateZ(135deg);
+  background: #d23636;
+}
+
+@media (min-width: 768px) {
+  .HamburgerButton {
+    display: none;
+  }
+}

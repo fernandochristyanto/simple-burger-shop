@@ -1,10 +1,14 @@
 import React, { Component, ReactNode } from 'react';
 import { Switch, withRouter, RouteComponentProps } from 'react-router-dom';
 
+import classes from './Layout.module.css';
 import { defaultLayoutRoute } from '../../config/index';
 import { connect } from 'react-redux';
 import ProtectedRoute from '../protectedRoute/ProtectedRoute';
 import { IAuth, IDefaultState } from '../../interfaces';
+import DefaultHeader from './DefaultHeader';
+import DefaultSidebar from './DefaultSidebar';
+import HamburgerButton from '../hamburgerButton/HamburgerButton';
 
 declare interface IDefaultLayoutProps extends RouteComponentProps {
   children?: ReactNode,
@@ -12,13 +16,26 @@ declare interface IDefaultLayoutProps extends RouteComponentProps {
 }
 
 class DefaultLayout extends Component<IDefaultLayoutProps> {
+  state = {
+    sideBarOpen: false,
+  };
+
   componentDidMount() {
-    if (!this.props.auth.res) this.props.history.push('/login')
+    // if (!this.props.auth.res) this.props.history.push('/login')
+  }
+
+  toggleSideBar = () => {
+    this.setState({ sideBarOpen: !this.state.sideBarOpen });
   }
 
   render() {
     return (
       <React.Fragment>
+        <DefaultHeader />
+        <HamburgerButton
+          isOpen={this.state.sideBarOpen}
+          onClick={this.toggleSideBar}
+        />
         <Switch>
           {defaultLayoutRoute.map((route, index) => (
             <ProtectedRoute
@@ -32,7 +49,10 @@ class DefaultLayout extends Component<IDefaultLayoutProps> {
             />
           ))}
         </Switch>
-        Hello, {this.props.auth.res?.fullname}
+        <main className={classes.ComponentWrapper}>
+          Hello, {this.props.auth.res?.fullname}
+        </main>
+        <DefaultSidebar isOpen={this.state.sideBarOpen} />
       </React.Fragment>
     )
   }
