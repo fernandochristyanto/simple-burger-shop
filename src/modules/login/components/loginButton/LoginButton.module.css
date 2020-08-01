@@ -14,8 +14,16 @@
   color: #edf4f2;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .LoginButton:focus {
   outline: 0;
+}
+
+.LoginButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
