@@ -1,0 +1,147 @@
+.BurgerWrapper {
+  width: 100%;
+  margin: auto;
+}
+
+.Burger {
+  width: 100%;
+  margin: auto;
+  height: 250px;
+  text-align: center;
+  overflow: auto;
+}
+
+.BreadTop {
+  width: 80%;
+  height: 20%;
+  position: relative;
+  background: linear-gradient(#a0522d ,#c68958);
+  border-radius: 50% 50% 0 0;
+  box-shadow: inset -15px 0 #a0522d;
+  margin: 1% auto;
+}
+
+.Seed1 {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  background: #ffffff;
+  top: 50%;
+  left: 35%;
+  border-radius: 100%;
+  transform: rotate(20deg);
+}
+
+.Seed1::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff;
+  top: 700%;
+  left: -300%;
+  border-radius: 100%;
+  transform: rotate(45deg);
+}
+
+.Seed1::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff;
+  top: -900%;
+  left: 400%;
+  border-radius: 100%;
+  transform: rotate(45deg);
+}
+
+.Seed2 {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  background: #ffffff;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  transform: rotate(135deg);
+}
+
+.Seed2::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff;
+  top: 900%;
+  left: 150%;
+  border-radius: 100%;
+}
+
+.Seed2::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff;
+  top: -300%;
+  left: -100%;
+  border-radius: 100%;
+  transform: rotate(100deg);
+}
+
+.BreadBottom {
+  width: 80%;
+  height: 15%;
+  position: relative;
+  background: linear-gradient(#a0522d ,#c68958);
+  border-radius: 0 0 20% 20%;
+  box-shadow: inset -15px 0 #a0522d;
+  margin: 1% auto;
+}
+
+.Cheese {
+  width: 90%;
+  height: 4%;
+  background: linear-gradient(#ffff04, #e7cc33);
+  border-radius: 20px;
+  margin: 1% auto;
+}
+
+.Salad {
+  width: 85%;
+  height: 6%;
+  background: linear-gradient(#228c1d, #91ce50);
+  border-radius: 20px;
+  margin: 1% auto;
+}
+
+.Tomato {
+  width: 50%;
+  height: 3%;
+  background: linear-gradient(#ff3813, #ff5e38);
+  border-radius: 20px;
+  margin: auto;
+}
+
+.Meat {
+  width: 75%;
+  height: 8%;
+  background: linear-gradient(#7f3608, #702e05);
+  border-radius: 30px;
+  margin: 1% auto;
+}
+
+@media (min-width: 500px) and (min-height: 401px) {
+  .Burger {
+    width: 450px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+  .Burger {
+    width: 700px;
+    height: 600px;
+  }
+}

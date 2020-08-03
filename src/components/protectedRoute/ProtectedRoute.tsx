@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Redirect, Route } from 'react-router-dom'
 
 const ProtectedRoute: React.FC<any> = (props) => {
-  if (!props.auth.res) return <Redirect to="/login" />
+  // if (!props.auth.res) return <Redirect to="/login" />
   return (
     <Route
       {...props}

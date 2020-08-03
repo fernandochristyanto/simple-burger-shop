@@ -36,21 +36,20 @@ class DefaultLayout extends Component<IDefaultLayoutProps> {
           isOpen={this.state.sideBarOpen}
           onClick={this.toggleSideBar}
         />
-        <Switch>
-          {defaultLayoutRoute.map((route, index) => (
-            <ProtectedRoute
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              name={route.name}
-              render={(props: any) => (
-                <route.component {...props} />
-              )}
-            />
-          ))}
-        </Switch>
         <main className={classes.ComponentWrapper}>
-          Hello, {this.props.auth.res?.fullname}
+          <Switch>
+            {defaultLayoutRoute.map((route, index) => (
+              <ProtectedRoute
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                name={route.name}
+                render={(props: any) => (
+                  <route.component {...props} />
+                )}
+              />
+            ))}
+          </Switch>
         </main>
         <DefaultSidebar isOpen={this.state.sideBarOpen} />
       </React.Fragment>
