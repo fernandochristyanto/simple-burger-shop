@@ -1,0 +1,35 @@
+.XScrollable {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.XScrollWrapper {
+  display: block;
+  position: relative;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: -20px;
+}
+
+.XScrollRail {
+  padding: 16px 0 20px 20px;
+  display: flex;
+}
+
+.XScrollItem:first-child {
+  margin-left: 0px;
+}
+
+.XScrollItem:last-child {
+  min-width: 20px;
+  margin: 0;
+}
+
+.XScrollItem {
+  flex-shrink: 0;
+  margin-left: 20px;
+  overflow: hidden;
+  white-space: normal;
+}
