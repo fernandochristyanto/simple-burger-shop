@@ -8,6 +8,8 @@ import NewInput from '../../../components/newInput/NewInput';
 import { doLogin } from '../redux/actions';
 import { IDoLoginParam, ILoginProps } from '../interfaces';
 import { Redirect } from 'react-router-dom';
+import CardHeader from '../../../components/card/cardHeader/CardHeader';
+import CardBody from '../../../components/card/cardBody/CardBody';
 
 class Login extends Component<ILoginProps> {
   state = {
@@ -55,26 +57,30 @@ class Login extends Component<ILoginProps> {
         <div className={classes.Login}>
           <div className={classes.LoginForm}>
             <Card>
-              <CardTitle>Simple Burger Shop</CardTitle>
-              <form>
-                <NewInput
-                  label="Username"
-                  type="text"
-                  icon="account_circle"
-                  isEmpty={this.state.username.length <= 0}
-                  onChange={(e) => this.setState({ username: e.target.value })}
-                  errorMessage={this.state.validationMessage.username}
-                />
-                <NewInput
-                  label="Password"
-                  type="password"
-                  icon="lock"
-                  isEmpty={this.state.password.length <= 0}
-                  onChange={(e) => this.setState({ password: e.target.value })}
-                  errorMessage={this.state.validationMessage.password}
-                />
-                <LoginButton onClick={(e) => this.loginHandler(e)} disabled={this.props.auth.fetch} />
-              </form>
+              <CardHeader>
+                <CardTitle>Simple Burger Shop</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <form>
+                  <NewInput
+                    label="Username"
+                    type="text"
+                    icon="account_circle"
+                    isEmpty={this.state.username.length <= 0}
+                    onChange={(e) => this.setState({ username: e.target.value })}
+                    errorMessage={this.state.validationMessage.username}
+                  />
+                  <NewInput
+                    label="Password"
+                    type="password"
+                    icon="lock"
+                    isEmpty={this.state.password.length <= 0}
+                    onChange={(e) => this.setState({ password: e.target.value })}
+                    errorMessage={this.state.validationMessage.password}
+                  />
+                  <LoginButton onClick={(e) => this.loginHandler(e)} disabled={this.props.auth.fetch} />
+                </form>
+              </CardBody>
             </Card>
           </div>
         </div>
