@@ -2,6 +2,7 @@ import { DefaultLayout } from './Layout';
 import { defaultLayoutRoute, nonLayoutRoute } from './Router'
 import reduxReducer from './Config.reducer';
 import reduxSaga from './Config.saga';
+import navigationMenus from './NavigationMenus';
 
 export {
   DefaultLayout,
@@ -9,4 +10,5 @@ export {
   nonLayoutRoute,
   reduxReducer,
   reduxSaga,
+  navigationMenus,
 }

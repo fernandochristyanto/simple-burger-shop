@@ -61,7 +61,7 @@
     padding: 0;
   }
 
-  .NavigationItem, .NavigationItem > a {
+  .NavigationItem > a {
     color: black;
     font-size: 1.25rem;
     transition: color 0.2s ease-in-out;

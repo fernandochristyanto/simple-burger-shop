@@ -2,13 +2,14 @@ import React from 'react';
 
 import classes from '../Navigation.module.css';
 import NavigationItem from './navigationItem/NavigationItem';
+import { navigationMenus } from '../../../config'
 
 const NavigationItems: React.FC = (props) => {
   return (
     <ul className={classes.NavigationItems}>
-      <NavigationItem>Order Burger</NavigationItem>
-      <NavigationItem>Purchase History</NavigationItem>
-      <NavigationItem>Logout</NavigationItem>
+      {navigationMenus.map((menu, index) => (
+        <NavigationItem key={index} path={menu.path} >{menu.title}</NavigationItem>
+      ))}
     </ul>
   )
 }

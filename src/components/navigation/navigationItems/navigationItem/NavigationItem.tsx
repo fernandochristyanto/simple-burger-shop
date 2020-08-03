@@ -3,11 +3,16 @@ import { NavLink } from 'react-router-dom';
 
 import classes from '../../Navigation.module.css';
 
-const NavigationItem: React.FC = (props) => {
+declare interface INavigationItemPops {
+  children?: React.ReactNode,
+  path: string,
+}
+
+const NavigationItem: React.FC<INavigationItemPops> = (props) => {
   return (
     <li className={classes.NavigationItem}>
       <NavLink
-        to="/login"
+        to={props.path}
         activeClassName={classes.Active}
       >
         {props.children}
