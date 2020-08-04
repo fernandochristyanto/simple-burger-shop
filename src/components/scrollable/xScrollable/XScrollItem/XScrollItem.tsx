@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import classes from '../xScrollable.module.css';
+import classes from '../XScrollable.module.css';
 
 const XScrollItem: React.FC = (props) => {
   return (

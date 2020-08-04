@@ -1,0 +1,38 @@
+.YScrollable {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  overflow: hidden;
+  margin-right: 17px;
+  max-height: 85%;
+}
+
+.YScrollWrapper {
+  display: block;
+  position: relative;
+  overflow: auto;
+  white-space: nowrap;
+  margin-right: -17px;
+}
+
+.YScrollRail {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.YScrollItem:first-child {
+  margin-top: 0px;
+}
+
+.YScrollItem:last-child {
+  min-width: 20px;
+  margin: 0;
+}
+
+.YScrollItem {
+  flex-shrink: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  white-space: normal;
+}

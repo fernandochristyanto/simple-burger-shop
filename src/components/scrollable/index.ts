@@ -1,7 +1,11 @@
-import XScrollable from './xScrollable/xScrollable';
-import XScrollItem from './xScrollable/XScrollItem/XScrollItem';
+import XScrollable from './xScrollable/XScrollable';
+import XScrollItem from './xScrollable/xScrollItem/XScrollItem';
+import YScrollable from './yScrollable/YScrollable';
+import YScrollItem from './yScrollable/yScrollItem/YScrollItem';
 
 export {
   XScrollable,
   XScrollItem,
+  YScrollable,
+  YScrollItem,
 }
