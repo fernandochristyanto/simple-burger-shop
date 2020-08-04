@@ -33,4 +33,21 @@
 
 .CardTitle {
   margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.CardGroup > .Card {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 576px) {
+  .CardGroup {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .CardGroup > .Card {
+    flex: 1 0;
+    margin-bottom: 0;
+  }
 }

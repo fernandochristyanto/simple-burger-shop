@@ -4,6 +4,7 @@ import { BreadTop, BreadBottom, Cheese, Tomato, Salad, Meat } from './ingredient
 import classes from './Burger.module.css';
 
 declare interface IBurgerProps {
+  ingredients?: string;
   width?: string;
   height?: string;
 }
@@ -14,6 +15,7 @@ class Burger extends Component<IBurgerProps> {
   };
 
   render() {
+    const ingredients = this.props.ingredients ? this.props.ingredients : this.state.ingredients;
     const width = this.props.width ? this.props.width : this.props.height;
     const height = this.props.height ? this.props.height : this.props.width;
 
@@ -24,7 +26,7 @@ class Burger extends Component<IBurgerProps> {
           style={{ width: width, height: height }}
         >
           <BreadTop />
-          {this.state.ingredients.split('').map((ingredient, index) => {
+          {ingredients.split('').map((ingredient, index) => {
             switch (ingredient) {
               case 'C':
                 return <Cheese key={index} />;
@@ -41,10 +43,6 @@ class Burger extends Component<IBurgerProps> {
               default: return null;
             }
           })}
-          <Tomato />
-          <Salad />
-          <Cheese />
-          <Meat />
           <BreadBottom />
         </div>
       </div>
