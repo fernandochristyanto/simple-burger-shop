@@ -3,18 +3,12 @@ import React from 'react';
 import classes from '../BurgerRecommendation.module.css';
 import { Card, CardTitle, CardBody } from '../../../../../components/card';
 import Burger from '../../../../../components/burger/Burger';
+import { ingreidentDictionary } from '../../../../../constants';
 
 declare interface IRecommendationCardProps {
   burgerName: string;
   ingredients: string;
 }
-
-const ingreidentDictionary: { [key: string]: string } = {
-  'C': 'Cheese',
-  'S': 'Salad',
-  'M': 'Meat',
-  'T': 'Tomato',
-};
 
 const RecommendationCard: React.FC<IRecommendationCardProps> = (props) => {
   let ingredients: { [key: string]: number } = {};

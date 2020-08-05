@@ -2,20 +2,12 @@ import React from 'react';
 
 import { XScrollable, XScrollItem } from '../../../../components/scrollable';
 import RecommendationCard from './recommendationCard/RecommendationCard';
-
-const recommendations = [
-  { ingredients: 'CMS', burgerName: 'Standard' },
-  { ingredients: 'SCMCM', burgerName: 'Double cheese burger' },
-  { ingredients: 'TSCM', burgerName: 'Complete' },
-  { ingredients: 'TSCM', burgerName: 'Complete' },
-  { ingredients: 'TSCM', burgerName: 'Complete' },
-  { ingredients: 'TSCM', burgerName: 'Complete' },
-];
+import { burgerRecommendations } from '../../../../constants';
 
 const BurgerRecommendation: React.FC = () => {
   return (
     <XScrollable>
-      {recommendations.map((recommendation, index) => (
+      {burgerRecommendations.map((recommendation, index) => (
         <XScrollItem key={index}>
           <RecommendationCard
             burgerName={recommendation.burgerName}

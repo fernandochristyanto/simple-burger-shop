@@ -1,6 +1,6 @@
 import React from 'react'
 
-import logo2 from '../../assets/images/Logo2.svg';
+import logo1 from '../../assets/images/Logo1.svg';
 
 declare interface ILogoProps {
   src?: string;
@@ -11,7 +11,7 @@ const Logo: React.FC<ILogoProps> = (props) => {
   return (
     <React.Fragment>
       <img
-        src={props.src ? props.src : logo2}
+        src={props.src ? props.src : logo1}
         width={props.width ? props.width : '200px'}
         alt="copo burger logo"
       />

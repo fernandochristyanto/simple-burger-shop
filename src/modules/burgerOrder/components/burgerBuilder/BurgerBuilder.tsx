@@ -5,7 +5,7 @@ import BuildControls from './buildControls/BuildControls'
 class BurgerBuilder extends Component {
   render() {
     return (
-      <div>
+      <div style={{ position: 'relative' }}>
         <Burger />
         <BuildControls />
       </div>
