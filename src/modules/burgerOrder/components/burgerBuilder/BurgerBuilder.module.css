@@ -1,8 +1,6 @@
-.BuildControls {
+.BuilderControler {
   width: 100%;
   background: #ffffff;
-  display: flex;
-  justify-content: center;
   box-shadow: 0 -2px 6px 0 rgba(0,0,0,.2);
   position: relative;
   bottom: 0;
@@ -10,13 +8,42 @@
   right: 0;
 }
 
+.BuildControls {
+  display: flex;
+  justify-content: center;
+}
+
 .BuildControl {
   width: 150px;
+}
+
+.OrderControls {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.OrderControls button {
+  margin-left: 15px;
+}
+
+.OrderControls button:first-child {
+  margin-left: 0;
 }
 
 @media(min-width: 768px) {
   .BuildControl {
     width: 165px;
+  }
+
+  .OrderControls {
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+
+  .OrderControls button:first-child {
+    margin-right: auto;
   }
 }
 
