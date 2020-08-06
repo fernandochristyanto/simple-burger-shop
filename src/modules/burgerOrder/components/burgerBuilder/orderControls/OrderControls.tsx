@@ -1,16 +1,29 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import classes from '../BurgerBuilder.module.css';
 import Button from '../../../../../components/button/Button';
+import { resetIngredient } from '../../../redux/actions';
 
-const OrderControls: React.FC = (props) => {
+declare interface IOrderControlsProps {
+  children?: React.ReactNode;
+  onResetBurger: () => Promise<void>;
+}
+
+const OrderControls: React.FC<IOrderControlsProps> = (props) => {
   return (
     <div className={classes.OrderControls}>
-      <Button variant="uncolored">Reset Burger</Button>
+      <Button onClick={props.onResetBurger} variant="uncolored">Reset Burger</Button>
       <Button variant="secondary">Buy Now</Button>
       <Button variant="primary">Add to Cart</Button>
     </div>
   )
 }
 
-export default OrderControls;
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onResetBurger: () => dispatch(resetIngredient()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(OrderControls);

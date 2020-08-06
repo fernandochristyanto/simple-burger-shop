@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 import classes from './Button.module.css';
 
-declare interface IButtonProps {
+declare interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   variant?: string;
 };
 
 const classChooser = (variant?: string) => {
-  console.log(variant);
   switch (variant) {
     case 'primary':
       return classes.primary;
@@ -27,7 +26,7 @@ const classChooser = (variant?: string) => {
 const Button: React.FC<IButtonProps> = (props) => {
   const classNames = [classes.Button, classChooser(props.variant)]
   return (
-    <button className={classNames.join(' ')}>
+    <button className={classNames.join(' ')} {...props}>
       {props.children}
     </button>
   )
