@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { XScrollItem } from '../../../../../../components/scrollable';
 import { Card, CardBody, CardTitle } from '../../../../../../components/card';
 import { ingreidentDictionary, ingredientImages } from '../../../../../../constants';
 import { connect } from 'react-redux';
 import { addIngredient } from '../../../../redux/actions';
+import classes from '../../BurgerBuilder.module.css';
 
 declare interface IBuildContrlProps {
   ingredient: string;
@@ -13,18 +13,16 @@ declare interface IBuildContrlProps {
 
 const BuildControl: React.FC<IBuildContrlProps> = (props) => {
   return (
-    <XScrollItem>
-      <div style={{ width: '250px' }} onClick={() => props.onAddIngredient(props.ingredient)}>
-        <Card>
-          <CardBody>
-            <img src={ingredientImages[props.ingredient]} width="100%" height="100%" alt={ingreidentDictionary[props.ingredient]} />
-            <CardTitle>
-              {ingreidentDictionary[props.ingredient]}
-            </CardTitle>
-          </CardBody>
-        </Card>
-      </div>
-    </XScrollItem>
+    <div className={classes.BuildControl} onClick={() => props.onAddIngredient(props.ingredient)}>
+      <Card hoverable>
+        <CardBody>
+          <img src={ingredientImages[props.ingredient]} width="100%" height="100%" alt={ingreidentDictionary[props.ingredient]} />
+          <CardTitle>
+            {ingreidentDictionary[props.ingredient]}
+          </CardTitle>
+        </CardBody>
+      </Card>
+    </div>
   )
 }
 

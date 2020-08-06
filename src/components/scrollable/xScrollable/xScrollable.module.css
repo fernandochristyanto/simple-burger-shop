@@ -30,6 +30,5 @@
 .XScrollItem {
   flex-shrink: 0;
   margin-left: 20px;
-  overflow: hidden;
   white-space: normal;
 }

@@ -10,9 +10,29 @@
   right: 0;
 }
 
+.BuildControl {
+  width: 150px;
+}
+
+@media(min-width: 768px) {
+  .BuildControl {
+    width: 165px;
+  }
+}
+
+@media(min-width: 960px) {
+  .BuildControl {
+    width: 200px;
+  }
+}
+
 @media (min-width: 1025px) {
   .BurgerBuilder {
     box-sizing: border-box;
     padding: 20px 20px 0 340px;
+  }
+
+  .BuildControl {
+    width: 250px;
   }
 }

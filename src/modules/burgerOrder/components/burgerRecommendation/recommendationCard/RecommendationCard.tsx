@@ -17,9 +17,9 @@ const RecommendationCard: React.FC<IRecommendationCardProps> = (props) => {
   ));
 
   return (
-    <Card width="300px">
+    <Card width="300px" hoverable>
       <CardBody>
-        <Burger width="150px" ingredients={props.ingredients} />
+        <Burger width="100px" ingredients={props.ingredients} />
         <CardTitle>{props.burgerName}</CardTitle>
         <div className={classes.Ingredients}>
           {Object.keys(ingredients).map((ingredient, index) => (

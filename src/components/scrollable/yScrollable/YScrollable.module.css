@@ -34,6 +34,5 @@
 .YScrollItem {
   flex-shrink: 0;
   margin-top: 20px;
-  overflow: hidden;
   white-space: normal;
 }

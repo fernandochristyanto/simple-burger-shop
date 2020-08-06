@@ -15,14 +15,10 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
   render() {
     return (
       <div className={classes.BurgerBuilder}>
-        <div>
-          <Burger
-            ingredients={this.props.burgerBuilder.res?.ingredients}
-          />
-        </div>
-        <div>
-          <BuildControls />
-        </div>
+        <Burger
+          ingredients={this.props.burgerBuilder.res?.ingredients}
+        />
+        <BuildControls />
       </div >
     )
   }
