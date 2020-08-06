@@ -5,7 +5,7 @@ import BurgerRecommendation from '../components/burgerRecommendation/BurgerRecom
 class BurgerOrder extends Component {
   render() {
     return (
-      <div>
+      <div style={{ position: 'relative' }}>
         <BurgerRecommendation />
         <BurgerBuilder />
       </div>

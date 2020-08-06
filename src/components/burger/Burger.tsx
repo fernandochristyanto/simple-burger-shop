@@ -10,12 +10,8 @@ declare interface IBurgerProps {
 }
 
 class Burger extends Component<IBurgerProps> {
-  state = {
-    ingredients: 'CSMT'
-  };
-
   render() {
-    const ingredients = this.props.ingredients ? this.props.ingredients : this.state.ingredients;
+    const ingredients = this.props.ingredients ? this.props.ingredients : '';
     const width = this.props.width ? this.props.width : this.props.height;
     const height = this.props.height ? this.props.height : this.props.width;
 
@@ -26,23 +22,25 @@ class Burger extends Component<IBurgerProps> {
           style={{ width: width, height: height }}
         >
           <BreadTop />
-          {ingredients.split('').map((ingredient, index) => {
-            switch (ingredient) {
-              case 'C':
-                return <Cheese key={index} />;
+          {ingredients ?
+            ingredients.split('').map((ingredient, index) => {
+              switch (ingredient) {
+                case 'C':
+                  return <Cheese key={index} />;
 
-              case 'S':
-                return <Salad key={index} />;
+                case 'S':
+                  return <Salad key={index} />;
 
-              case 'M':
-                return <Meat key={index} />;
+                case 'M':
+                  return <Meat key={index} />;
 
-              case 'T':
-                return <Tomato key={index} />;
+                case 'T':
+                  return <Tomato key={index} />;
 
-              default: return null;
-            }
-          })}
+                default: return null;
+              }
+            }) : <p>Please add ingredients!</p>
+          }
           <BreadBottom />
         </div>
       </div>

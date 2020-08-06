@@ -11,3 +11,17 @@
   box-sizing: border-box;
   border-radius: 3px;
 }
+
+.VerticalRecommendation {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .VerticalRecommendation {
+    display: block;
+  }
+
+  .HorizontalRecommendation {
+    display: none;
+  }
+}

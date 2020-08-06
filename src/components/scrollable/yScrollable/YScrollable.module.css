@@ -5,6 +5,7 @@
   overflow: hidden;
   margin-right: 17px;
   max-height: 85%;
+  z-index: 10;
 }
 
 .YScrollWrapper {
