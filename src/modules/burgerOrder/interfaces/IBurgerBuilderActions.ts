@@ -12,11 +12,13 @@ declare interface IResetIngredientAction {
 declare interface ISetIngredientAction {
   type: typeof SET_INGREDIENTS
   ingredients: string
+  price: number
 }
 
 declare interface IRemoveIngredientAction {
   type: typeof REMOVE_INGREDIENT
   index: number
+  ingredient: string
 }
 
 export type BurgerBuilderActions = IAddIngredientAction | IResetIngredientAction | ISetIngredientAction | IRemoveIngredientAction;

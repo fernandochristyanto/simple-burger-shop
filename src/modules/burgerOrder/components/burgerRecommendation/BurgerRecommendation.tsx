@@ -15,6 +15,7 @@ const BurgerRecommendation = () => {
               <RecommendationCard
                 burgerName={recommendation.burgerName}
                 ingredients={recommendation.ingredients}
+                price={recommendation.price}
               />
             </YScrollItem>
           ))}
@@ -27,6 +28,7 @@ const BurgerRecommendation = () => {
               <RecommendationCard
                 burgerName={recommendation.burgerName}
                 ingredients={recommendation.ingredients}
+                price={recommendation.price}
               />
             </XScrollItem>
           ))}

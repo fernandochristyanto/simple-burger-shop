@@ -6,7 +6,7 @@ declare interface IIngredientProps {
   ingredient: string;
   index: number;
   isBuilding?: boolean;
-  onRemoveIngredient?: ((index: number) => Promise<void>) | null;
+  onRemoveIngredient?: ((index: number, ingredient: string) => Promise<void>) | null;
 }
 
 const classPicker = (ingredient: string) => {
@@ -32,7 +32,7 @@ const Ingredient = (props: IIngredientProps) => {
   return (
     <div
       className={classNames.join(' ')}
-      onClick={() => props.onRemoveIngredient && props.onRemoveIngredient(props.index)}
+      onClick={() => props.onRemoveIngredient && props.onRemoveIngredient(props.index, props.ingredient)}
     ></div>
   )
 }

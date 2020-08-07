@@ -16,5 +16,6 @@ export declare interface IBurgerBuilderProps {
 export declare interface IRecommendationCardProps {
   burgerName: string
   ingredients: string
-  onSetIngredients: (ingredients: string) => Promise<void>
+  price: number
+  onSetIngredients: (ingredients: string, price: number) => Promise<void>
 }

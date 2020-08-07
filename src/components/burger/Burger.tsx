@@ -6,11 +6,12 @@ import { connect } from 'react-redux';
 import { removeIngredient } from '../../modules/burgerOrder/redux/actions';
 
 declare interface IBurgerProps {
-  ingredients?: string;
+  ingredients: string;
+  price: number;
   width?: string;
   height?: string;
   isBuilding?: boolean;
-  onRemoveIngredient: (index: number) => Promise<void>;
+  onRemoveIngredient: (index: number, ingredient: string) => Promise<void>;
 }
 
 class Burger extends Component<IBurgerProps> {
@@ -39,7 +40,7 @@ class Burger extends Component<IBurgerProps> {
           }
           <BreadBottom />
         </div>
-        <span className={classes.PriceTag}>$12.70</span>
+        <span className={classes.PriceTag}>${this.props.price}</span>
       </div>
     )
   }
@@ -47,7 +48,7 @@ class Burger extends Component<IBurgerProps> {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    onRemoveIngredient: (index: number) => dispatch(removeIngredient(index))
+    onRemoveIngredient: (index: number, ingredient: string) => dispatch(removeIngredient(index, ingredient))
   }
 }
 

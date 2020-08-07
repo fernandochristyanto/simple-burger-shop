@@ -15,10 +15,14 @@ const RecommendationCard = (props: IRecommendationCardProps) => {
   ));
 
   return (
-    <div onClick={() => props.onSetIngredients(props.ingredients)}>
+    <div onClick={() => props.onSetIngredients(props.ingredients, props.price)}>
       <Card width="300px" hoverable>
         <CardBody>
-          <Burger width="100px" ingredients={props.ingredients} />
+          <Burger
+            width="100px"
+            ingredients={props.ingredients}
+            price={props.price}
+          />
           <CardTitle>{props.burgerName}</CardTitle>
           <div className={classes.Ingredients}>
             {Object.keys(ingredients).map((ingredient, index) => (
@@ -38,7 +42,7 @@ const RecommendationCard = (props: IRecommendationCardProps) => {
 
 const mapDispatchToProps = (dipsatch: any) => {
   return {
-    onSetIngredients: (ingredients: string) => dipsatch(setIngredients(ingredients)),
+    onSetIngredients: (ingredients: string, price: number) => dipsatch(setIngredients(ingredients, price)),
   }
 }
 

@@ -1,4 +1,5 @@
 
 export declare interface IBurgerBuilder {
-  ingredients: string,
+  ingredients: string
+  price: number
 }

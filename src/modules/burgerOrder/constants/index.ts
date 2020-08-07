@@ -1,5 +1,6 @@
 import { IDefaultState, IBurgerBuilder } from "../../../interfaces";
 import initialDefaultState from "../../../constants/InitialDefaultState";
+import { DEFAULT_PRICE } from "../../../constants";
 
 export const ADD_INGREDIENT = "ADD_INGREDIENT";
 export const REMOVE_INGREDIENT = "REMOVE_INGREDIENT";
@@ -10,5 +11,6 @@ export const initialBurgerBuilderState: IDefaultState<IBurgerBuilder> = {
   ...initialDefaultState,
   res: {
     ingredients: '',
+    price: DEFAULT_PRICE,
   }
 }

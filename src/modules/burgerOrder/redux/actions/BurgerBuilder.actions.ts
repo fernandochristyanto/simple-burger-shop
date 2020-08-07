@@ -2,6 +2,6 @@ import { ADD_INGREDIENT, REMOVE_INGREDIENT, RESET_INGREDIENT, SET_INGREDIENTS } 
 import { BurgerBuilderActions } from "../../interfaces";
 
 export const addIngredient = (ingredient: string): BurgerBuilderActions => ({ type: ADD_INGREDIENT, ingredient: ingredient });
-export const removeIngredient = (index: number): BurgerBuilderActions => ({ type: REMOVE_INGREDIENT, index: index });
+export const removeIngredient = (index: number, ingredient: string): BurgerBuilderActions => ({ type: REMOVE_INGREDIENT, index: index, ingredient: ingredient });
 export const resetIngredient = (): BurgerBuilderActions => ({ type: RESET_INGREDIENT });
-export const setIngredients = (ingredients: string): BurgerBuilderActions => ({ type: SET_INGREDIENTS, ingredients: ingredients });
+export const setIngredients = (ingredients: string, price: number): BurgerBuilderActions => ({ type: SET_INGREDIENTS, ingredients: ingredients, price: price });
