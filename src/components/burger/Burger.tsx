@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { BreadTop, BreadBottom, Cheese, Tomato, Salad, Meat } from './ingredients';
+import { BreadTop, BreadBottom, Ingredient } from './ingredients';
 
 import classes from './Burger.module.css';
+import { connect } from 'react-redux';
+import { removeIngredient } from '../../modules/burgerOrder/redux/actions';
 
 declare interface IBurgerProps {
   ingredients?: string;
   width?: string;
   height?: string;
+  isBuilding?: boolean;
+  onRemoveIngredient: (index: number) => Promise<void>;
 }
 
 class Burger extends Component<IBurgerProps> {
@@ -23,23 +27,15 @@ class Burger extends Component<IBurgerProps> {
         >
           <BreadTop />
           {ingredients ?
-            ingredients.split('').map((ingredient, index) => {
-              switch (ingredient) {
-                case 'C':
-                  return <Cheese key={index} />;
-
-                case 'S':
-                  return <Salad key={index} />;
-
-                case 'M':
-                  return <Meat key={index} />;
-
-                case 'T':
-                  return <Tomato key={index} />;
-
-                default: return null;
-              }
-            }) : <p>Please add ingredients!</p>
+            ingredients.split('').map((ingredient, index) => (
+              <Ingredient
+                key={index}
+                ingredient={ingredient}
+                index={index}
+                onRemoveIngredient={this.props.isBuilding ? this.props.onRemoveIngredient : null}
+                isBuilding={this.props.isBuilding}
+              />
+            )) : <p>Please add ingredients!</p>
           }
           <BreadBottom />
         </div>
@@ -48,4 +44,10 @@ class Burger extends Component<IBurgerProps> {
   }
 }
 
-export default Burger
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onRemoveIngredient: (index: number) => dispatch(removeIngredient(index))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Burger);

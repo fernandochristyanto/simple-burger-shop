@@ -11,6 +11,10 @@
   overflow: auto;
 }
 
+.Ingredient {
+  cursor: pointer;
+}
+
 .BreadTop {
   width: 80%;
   height: 20%;
