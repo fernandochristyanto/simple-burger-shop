@@ -4,13 +4,9 @@ import { connect } from 'react-redux';
 import classes from '../BurgerBuilder.module.css';
 import Button from '../../../../../components/button/Button';
 import { resetIngredient } from '../../../redux/actions';
+import { IOrderControlsProps } from '../../../interfaces';
 
-declare interface IOrderControlsProps {
-  children?: React.ReactNode;
-  onResetBurger: () => Promise<void>;
-}
-
-const OrderControls: React.FC<IOrderControlsProps> = (props) => {
+const OrderControls = (props: IOrderControlsProps) => {
   return (
     <div className={classes.OrderControls}>
       <Button onClick={props.onResetBurger} variant="uncolored">Reset Burger</Button>

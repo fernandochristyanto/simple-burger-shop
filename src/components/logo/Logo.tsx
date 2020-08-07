@@ -7,7 +7,7 @@ declare interface ILogoProps {
   width?: string;
 }
 
-const Logo: React.FC<ILogoProps> = (props) => {
+const Logo = (props: ILogoProps) => {
   return (
     <React.Fragment>
       <img

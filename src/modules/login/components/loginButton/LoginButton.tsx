@@ -3,7 +3,7 @@ import React, { ButtonHTMLAttributes } from 'react'
 import classes from './LoginButton.module.css';
 import MaterialIcon from '../../../../components/materialIcon/MaterialIcon';
 
-const LoginButton: React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = (props) => {
+const LoginButton = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <button className={classes.LoginButton} {...props}>
       {!props.disabled ? 'Login' :

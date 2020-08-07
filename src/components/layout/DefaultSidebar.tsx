@@ -8,7 +8,7 @@ declare interface ISidebarProps {
   isOpen?: boolean;
 }
 
-const DefaultSidebar: React.FC<ISidebarProps> = (props) => {
+const DefaultSidebar = (props: ISidebarProps) => {
   const classNames = [classes.Sidebar, (props.isOpen ? classes.Open : '')];
   return (
     <div className={classNames.join(' ')}>

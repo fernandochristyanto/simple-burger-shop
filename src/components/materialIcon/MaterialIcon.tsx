@@ -1,13 +1,13 @@
 import React from 'react'
 
 declare interface IMaterialIconProps {
-  children?: React.ReactNode,
+  children?: React.ReactNode
   fontSize?: string,
   iconName?: string,
   className?: string[],
 }
 
-const MaterialIcon: React.FC<IMaterialIconProps> = (props) => {
+const MaterialIcon = (props: IMaterialIconProps) => {
   const fontSize = props.fontSize ?? '1rem';
   const iconName = props.iconName ?? props.children ?? 'code';
   const classNames = props.className ? props.className : [];

@@ -7,7 +7,7 @@ declare interface IHamburgerProps {
   onClick: () => void;
 }
 
-const HamburgerButton: React.FC<IHamburgerProps> = (props) => {
+const HamburgerButton = (props: IHamburgerProps) => {
   const classNames = [classes.HamburgerButton, (props.isOpen ? classes.Open : '')];
   return (
     <div className={classNames.join(' ')} onClick={() => props.onClick()}>

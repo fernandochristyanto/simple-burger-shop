@@ -7,7 +7,7 @@ import InputLabel from './inputLabel/InputLabel';
 import MaterialIcon from '../materialIcon/MaterialIcon';
 import ValidationMessage from './validationMessage/ValidationMessage';
 
-const NewInput: React.FC<INewInputProps> = ({ isEmpty, errorMessage, ...props }) => {
+const NewInput = ({ isEmpty, errorMessage, ...props }: INewInputProps) => {
   return (
     <div className={classes.NewInput}>
       <InputBox {...props} />

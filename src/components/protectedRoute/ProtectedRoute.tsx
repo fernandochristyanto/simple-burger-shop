@@ -1,8 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Redirect, Route } from 'react-router-dom'
+import { Redirect, Route, RouteProps } from 'react-router-dom'
+import { IAuth, IDefaultState } from '../../interfaces'
 
-const ProtectedRoute: React.FC<any> = (props) => {
+declare interface IProtectedRouteProps extends RouteProps {
+  name: string
+  auth: IDefaultState<IAuth>
+}
+
+const ProtectedRoute = (props: IProtectedRouteProps) => {
   // if (!props.auth.res) return <Redirect to="/login" />
   return (
     <Route

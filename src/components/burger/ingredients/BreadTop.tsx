@@ -2,7 +2,7 @@ import React from 'react'
 
 import classes from '../Burger.module.css';
 
-const BreadTop: React.FC = () => {
+const BreadTop = () => {
   return (
     <div className={classes.BreadTop}>
       <span className={classes.Seed1}></span>

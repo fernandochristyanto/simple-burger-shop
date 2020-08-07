@@ -2,8 +2,9 @@ import React from 'react';
 
 import classes from './ValidationMessage.module.css';
 import MaterialIcon from '../../materialIcon/MaterialIcon';
+import { IValidationMessageProps } from '../interfaces';
 
-const ValidationMessage: React.FC = (props) => {
+const ValidationMessage = (props: IValidationMessageProps) => {
   return (
     <div className={classes.ValidationMessage}>
       <MaterialIcon iconName='error' />

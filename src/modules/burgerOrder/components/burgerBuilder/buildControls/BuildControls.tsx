@@ -5,7 +5,7 @@ import { XScrollable, XScrollItem } from '../../../../../components/scrollable';
 import { ingredients } from '../../../../../constants';
 import BuildControl from './buildControl/BuildControl';
 
-const BuildControls: React.FC = (props) => {
+const BuildControls = () => {
   return (
     <div className={classes.BuildControls}>
       <XScrollable>

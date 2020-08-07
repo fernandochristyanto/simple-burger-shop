@@ -1,9 +1,9 @@
 import React from 'react'
-import { INewInputProps } from '../interfaces';
+import { IInputLabelProps } from '../interfaces';
 
 import classes from './InputLabel.module.css';
 
-const InputLabel: React.FC<INewInputProps> = (props) => {
+const InputLabel = (props: IInputLabelProps) => {
   const classNames = [classes.InputLabel];
   props.isEmpty ? classNames.push(classes.Empty) : classNames.push(classes.NotEmpty);
 

@@ -2,8 +2,9 @@ import React from 'react';
 
 import classes from './XScrollable.module.css';
 import { XScrollItem } from '..';
+import { IScrollableProps } from '../interfaces';
 
-const xScrollable: React.FC = (props) => {
+const xScrollable = (props: IScrollableProps) => {
   return (
     <div className={classes.XScrollable}>
       <div className={classes.XScrollWrapper}>

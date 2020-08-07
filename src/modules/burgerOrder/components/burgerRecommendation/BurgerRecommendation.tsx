@@ -5,7 +5,7 @@ import RecommendationCard from './recommendationCard/RecommendationCard';
 import { burgerRecommendations } from '../../../../constants';
 import classes from './BurgerRecommendation.module.css';
 
-const BurgerRecommendation: React.FC = () => {
+const BurgerRecommendation = () => {
   return (
     <React.Fragment>
       <div className={classes.VerticalRecommendation}>

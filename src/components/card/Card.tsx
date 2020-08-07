@@ -8,7 +8,7 @@ declare interface ICardProps {
   hoverable?: boolean;
 }
 
-const Card: React.FC<ICardProps> = (props) => {
+const Card = (props: ICardProps) => {
   const classNames = [classes.Card, props.hoverable ? classes.Hoverable : ''];
   return (
     <div

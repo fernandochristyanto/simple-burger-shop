@@ -23,7 +23,7 @@ const classChooser = (variant?: string) => {
   }
 }
 
-const Button: React.FC<IButtonProps> = (props) => {
+const Button = (props: IButtonProps) => {
   const classNames = [classes.Button, classChooser(props.variant)]
   return (
     <button className={classNames.join(' ')} {...props}>

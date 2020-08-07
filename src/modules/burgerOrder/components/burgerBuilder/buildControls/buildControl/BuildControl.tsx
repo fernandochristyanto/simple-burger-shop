@@ -5,13 +5,9 @@ import { ingreidentDictionary, ingredientImages } from '../../../../../../consta
 import { connect } from 'react-redux';
 import { addIngredient } from '../../../../redux/actions';
 import classes from '../../BurgerBuilder.module.css';
+import { IBuildControlProps } from '../../../../interfaces';
 
-declare interface IBuildContrlProps {
-  ingredient: string;
-  onAddIngredient: (ingredient: string) => Promise<void>;
-}
-
-const BuildControl: React.FC<IBuildContrlProps> = (props) => {
+const BuildControl = (props: IBuildControlProps) => {
   return (
     <div className={classes.BuildControl} onClick={() => props.onAddIngredient(props.ingredient)}>
       <Card hoverable>

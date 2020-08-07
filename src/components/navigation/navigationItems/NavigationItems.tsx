@@ -4,7 +4,7 @@ import classes from '../Navigation.module.css';
 import NavigationItem from './navigationItem/NavigationItem';
 import { navigationMenus } from '../../../config'
 
-const NavigationItems: React.FC = (props) => {
+const NavigationItems = () => {
   return (
     <ul className={classes.NavigationItems}>
       {navigationMenus.map((menu, index) => (

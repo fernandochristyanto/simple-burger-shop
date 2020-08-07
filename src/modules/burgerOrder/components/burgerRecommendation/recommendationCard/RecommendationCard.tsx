@@ -6,14 +6,9 @@ import Burger from '../../../../../components/burger/Burger';
 import { ingreidentDictionary } from '../../../../../constants';
 import { connect } from 'react-redux';
 import { setIngredients } from '../../../redux/actions';
+import { IRecommendationCardProps } from '../../../interfaces';
 
-declare interface IRecommendationCardProps {
-  burgerName: string;
-  ingredients: string;
-  onSetIngredients: (param: string) => Promise<void>;
-}
-
-const RecommendationCard: React.FC<IRecommendationCardProps> = (props) => {
+const RecommendationCard = (props: IRecommendationCardProps) => {
   let ingredients: { [key: string]: number } = {};
   props.ingredients.split('').map((ingredient) => (
     ingredients[ingredient] ? ingredients[ingredient] += 1 : ingredients[ingredient] = 1

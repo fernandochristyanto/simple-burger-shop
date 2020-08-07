@@ -3,7 +3,6 @@ import React from 'react'
 import classes from '../Burger.module.css';
 
 declare interface IIngredientProps {
-  children?: React.ReactNode;
   ingredient: string;
   index: number;
   isBuilding?: boolean;
@@ -28,7 +27,7 @@ const classPicker = (ingredient: string) => {
   }
 }
 
-const Ingredient: React.FC<IIngredientProps> = (props) => {
+const Ingredient = (props: IIngredientProps) => {
   const classNames = [props.isBuilding ? classes.Ingredient : '', classPicker(props.ingredient)];
   return (
     <div

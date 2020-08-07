@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component } from 'react';
 import { Switch, withRouter, RouteComponentProps } from 'react-router-dom';
 
 import classes from './Layout.module.css';
@@ -11,7 +11,6 @@ import DefaultSidebar from './DefaultSidebar';
 import HamburgerButton from '../hamburgerButton/HamburgerButton';
 
 declare interface IDefaultLayoutProps extends RouteComponentProps {
-  children?: ReactNode,
   auth: IDefaultState<IAuth>,
 }
 

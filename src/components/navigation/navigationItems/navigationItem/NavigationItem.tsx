@@ -8,7 +8,7 @@ declare interface INavigationItemPops {
   path: string,
 }
 
-const NavigationItem: React.FC<INavigationItemPops> = (props) => {
+const NavigationItem = (props: INavigationItemPops) => {
   return (
     <li className={classes.NavigationItem}>
       <NavLink
