@@ -1,6 +1,45 @@
 .BurgerWrapper {
   width: 100%;
   margin: auto;
+  position: relative;
+  text-align: right;
+}
+
+.PriceTag {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(90deg, #f5a31a, #d32626);;
+  height: 3rem;
+  line-height: 1.9;
+  padding: 0 10px;
+  border-radius: 3px 4px 4px 3px;
+  border-left: 1px solid #f5a31a;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.PriceTag::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.5rem 1.5rem 1.5rem 0;
+  border-color: transparent #f5a31a transparent transparent;
+  display: block;
+  position: absolute;
+  left: -1.5rem;
+}
+
+.PriceTag::after {
+  content: '';
+  background: white;
+  border-radius: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  display: block;
+  position: absolute;
+  left: -1rem;
+  top: 1.3rem;
 }
 
 .Burger {

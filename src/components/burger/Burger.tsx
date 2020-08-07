@@ -39,6 +39,7 @@ class Burger extends Component<IBurgerProps> {
           }
           <BreadBottom />
         </div>
+        <span className={classes.PriceTag}>$12.70</span>
       </div>
     )
   }
