@@ -18,6 +18,7 @@ class BurgerBuilder extends Component<IBurgerBuilderProps> {
       <div className={classes.BurgerBuilder}>
         <Burger
           ingredients={this.props.burgerBuilder.res?.ingredients}
+          isBuilding={true}
         />
         <div className={classes.BuilderControler}>
           <BuildControls />

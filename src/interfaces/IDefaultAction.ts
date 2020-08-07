@@ -1,4 +1,3 @@
-export declare interface IDefaultAction<T = any> {
+export declare interface IDefaultAction {
   type: string;
-  data?: T;
 };

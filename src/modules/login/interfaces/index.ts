@@ -1,2 +1,3 @@
 export * from './IParams';
-export * from './IComponentProp';
+export * from './IComponentProps';
+export * from './IAuthAction';

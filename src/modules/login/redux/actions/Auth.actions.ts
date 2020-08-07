@@ -1,7 +1,6 @@
 import { DO_LOGIN, DO_LOGIN_SUCCESS, DO_LOGIN_FAILED } from "../../constants";
-import { IDoLoginParam, IDoLoginSuccessParam } from "../../interfaces";
-import { IDefaultAction } from "../../../../interfaces";
+import { IDoLoginParam, IDoLoginSuccessParam, AuthActions } from "../../interfaces";
 
-export const doLogin = (param: IDoLoginParam): IDefaultAction => ({ type: DO_LOGIN, data: param });
-export const doLoginSuccess = (param: IDoLoginSuccessParam): IDefaultAction => ({ type: DO_LOGIN_SUCCESS, data: param });
-export const doLoginFailed = (error: any): IDefaultAction => ({ type: DO_LOGIN_FAILED, data: error });
+export const doLogin = (param: IDoLoginParam): AuthActions => ({ type: DO_LOGIN, data: param });
+export const doLoginSuccess = (param: IDoLoginSuccessParam): AuthActions => ({ type: DO_LOGIN_SUCCESS, auth: param });
+export const doLoginFailed = (error: any): AuthActions => ({ type: DO_LOGIN_FAILED, error: error });

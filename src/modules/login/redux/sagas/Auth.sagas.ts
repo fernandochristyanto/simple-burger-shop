@@ -1,19 +1,19 @@
 import { takeLatest, put } from "redux-saga/effects";
 import { DO_LOGIN } from "../../constants";
-import { IDoLoginParam } from "../../interfaces";
-import { IDefaultAction } from "../../../../interfaces";
+import { AuthActions } from "../../interfaces";
 import { doLoginSuccess, doLoginFailed } from "../actions";
 import mockAPIRequest from "../../../../mockAPIRequest";
 
-function* workerSagaDoLogin(action: IDefaultAction<IDoLoginParam>) {
+function* workerSagaDoLogin(action: AuthActions) {
   try {
-    const { username, password } = action.data || {};
+    if (action.type === DO_LOGIN) {
+      const { username, password } = action.data;
+      const response = yield mockAPIRequest('auth', { username, password });
 
-    const response = yield mockAPIRequest('auth', { username, password });
+      if (response.status !== 200) throw new Error('User not Found!');
 
-    if (response.status !== 200) throw new Error('User not Found!');
-
-    yield put(doLoginSuccess(response.res));
+      yield put(doLoginSuccess(response.res));
+    }
   } catch (error) {
     yield put(doLoginFailed(error.message));
   }

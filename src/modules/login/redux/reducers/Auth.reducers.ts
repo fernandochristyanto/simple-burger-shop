@@ -1,12 +1,12 @@
-import { IDefaultState, IDefaultAction } from "../../../../interfaces";
+import { IDefaultState } from "../../../../interfaces";
 import initialDefaultState from "../../../../constants/InitialDefaultState";
-import initialDefaultAction from "../../../../constants/InitialDefaultAction";
 import { DO_LOGIN, DO_LOGIN_SUCCESS, DO_LOGIN_FAILED } from "../../constants";
 import { IAuth } from "../../../../interfaces";
+import { AuthActions } from "../../interfaces";
 
 export const authReducer = (
   state: IDefaultState<IAuth> = initialDefaultState,
-  action: IDefaultAction<IAuth> = initialDefaultAction,
+  action: AuthActions,
 ): IDefaultState<IAuth> => {
   switch (action.type) {
     case DO_LOGIN:
@@ -23,7 +23,7 @@ export const authReducer = (
         ...state,
         action: action.type,
         fetch: false,
-        res: action.data ?? null,
+        res: action.auth,
         err: null,
       }
 
@@ -33,7 +33,7 @@ export const authReducer = (
         action: action.type,
         fetch: false,
         res: null,
-        err: action.data ?? null,
+        err: action.error,
       }
 
     default:
