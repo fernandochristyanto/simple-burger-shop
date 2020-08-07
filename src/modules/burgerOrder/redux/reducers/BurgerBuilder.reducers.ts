@@ -1,5 +1,5 @@
 import { IDefaultState, IBurgerBuilder } from "../../../../interfaces";
-import { ADD_INGREDIENT, RESET_INGREDIENT, initialBurgerBuilderState, SET_INGREDIENTS } from "../../constants";
+import { ADD_INGREDIENT, RESET_INGREDIENT, initialBurgerBuilderState, SET_INGREDIENTS, REMOVE_INGREDIENT } from "../../constants";
 import { BurgerBuilderActions } from "../../interfaces";
 
 export const burgerBuilderReducer = (
@@ -33,6 +33,18 @@ export const burgerBuilderReducer = (
         err: null,
         res: { ...state.res, ingredients: action.ingredients },
       };
+
+    case REMOVE_INGREDIENT:
+      return {
+        ...state,
+        action: action.type,
+        fetch: false,
+        err: null,
+        res: {
+          ...state.res,
+          ingredients: state.res?.ingredients.slice(0, action.index).concat(state.res.ingredients.slice(action.index + 1)) ?? ''
+        }
+      }
 
     default:
       return state;
