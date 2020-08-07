@@ -40,6 +40,10 @@
   margin-bottom: 15px;
 }
 
+.Hoverable {
+  cursor: pointer;
+}
+
 .Hoverable:hover {
   transition: all 0.3s;
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
