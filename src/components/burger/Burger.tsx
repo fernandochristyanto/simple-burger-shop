@@ -7,7 +7,7 @@ import { removeIngredient } from '../../modules/burgerOrder/redux/actions';
 
 declare interface IBurgerProps {
   ingredients: string;
-  price: number;
+  price?: number;
   width?: string;
   height?: string;
   isBuilding?: boolean;
@@ -19,11 +19,12 @@ class Burger extends Component<IBurgerProps> {
     const ingredients = this.props.ingredients ? this.props.ingredients : '';
     const width = this.props.width ? this.props.width : this.props.height;
     const height = this.props.height ? this.props.height : this.props.width;
+    const burgerClass = [classes.Burger, this.props.isBuilding ? '' : classes.FixedBurger];
 
     return (
       <div className={classes.BurgerWrapper}>
         <div
-          className={classes.Burger}
+          className={burgerClass.join(' ')}
           style={{ width: width, height: height }}
         >
           <BreadTop />
@@ -40,7 +41,10 @@ class Burger extends Component<IBurgerProps> {
           }
           <BreadBottom />
         </div>
-        <span className={classes.PriceTag}>${this.props.price}</span>
+        {this.props.price ?
+          <span className={classes.PriceTag}>${this.props.price}</span>
+          : null
+        }
       </div>
     )
   }

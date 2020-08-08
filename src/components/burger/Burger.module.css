@@ -3,6 +3,7 @@
   margin: auto;
   position: relative;
   text-align: right;
+  padding-bottom: 10px;
 }
 
 .PriceTag {
@@ -48,6 +49,12 @@
   height: 250px;
   text-align: center;
   overflow: auto;
+}
+
+.FixedBurger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Ingredient {
@@ -164,7 +171,7 @@
   height: 3%;
   background: linear-gradient(#ff3813, #ff5e38);
   border-radius: 20px;
-  margin: auto;
+  margin: 1% auto;
 }
 
 .Meat {
