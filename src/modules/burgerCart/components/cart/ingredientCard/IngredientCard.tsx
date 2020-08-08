@@ -9,14 +9,14 @@ declare interface IIngredientCard {
 
 const IngredientCard = (props: IIngredientCard) => {
   let ingredients: { [key: string]: number } = {};
-  props.ingredients.split('').map((ingredient) => {
+  props.ingredients.split('').forEach((ingredient) => {
     ingredients[ingredient] ? ingredients[ingredient] += 1 : ingredients[ingredient] = 1;
   })
 
   return (
     <div className={classes.IngredientCardWrapper}>
       {Object.keys(ingredients).map((ingredient) => (
-        <div className={classes.IngredientCard}>
+        <div className={classes.IngredientCard} key={ingredient}>
           {ingreidentDictionary[ingredient] + (ingredients[ingredient] > 1 ? ` X${ingredients[ingredient]}` : '')}
         </div>
       ))}
