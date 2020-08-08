@@ -50,7 +50,7 @@ class DefaultLayout extends Component<IDefaultLayoutProps> {
             ))}
           </Switch>
         </main>
-        <DefaultSidebar isOpen={this.state.sideBarOpen} />
+        <DefaultSidebar isOpen={this.state.sideBarOpen} sidebarToggle={this.toggleSideBar} />
       </React.Fragment>
     )
   }

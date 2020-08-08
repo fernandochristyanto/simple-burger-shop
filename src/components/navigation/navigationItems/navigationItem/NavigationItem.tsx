@@ -6,6 +6,7 @@ import classes from '../../Navigation.module.css';
 declare interface INavigationItemPops {
   children?: React.ReactNode,
   path: string,
+  sidebarToggle?: () => void,
 }
 
 const NavigationItem = (props: INavigationItemPops) => {
@@ -14,6 +15,7 @@ const NavigationItem = (props: INavigationItemPops) => {
       <NavLink
         to={props.path}
         activeClassName={classes.Active}
+        onClick={() => props.sidebarToggle && props.sidebarToggle()}
       >
         {props.children}
       </NavLink>

@@ -6,6 +6,7 @@ import NavigationItems from '../navigation/navigationItems/NavigationItems';
 
 declare interface ISidebarProps {
   isOpen?: boolean;
+  sidebarToggle: () => void;
 }
 
 const DefaultSidebar = (props: ISidebarProps) => {
@@ -15,7 +16,7 @@ const DefaultSidebar = (props: ISidebarProps) => {
       <div className={classes.HeaderMenu}>
         <Logo />
       </div>
-      <NavigationItems />
+      <NavigationItems sidebarToggle={props.sidebarToggle} />
     </div>
   )
 }
