@@ -4,6 +4,10 @@ const menus = [
     path: '/order-burger',
   },
   {
+    title: 'Burger Cart',
+    path: '/burger-cart',
+  },
+  {
     title: 'Purchase History',
     path: '/history',
   },

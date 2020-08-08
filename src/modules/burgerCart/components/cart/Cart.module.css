@@ -1,0 +1,31 @@
+.CartWrapper {
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.CheckoutPanel {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .CartWrapper {
+    min-width: 1024px;
+    max-width: 1120px;
+    padding: 0 20px;
+    margin: auto;
+    box-sizing: border-box;
+  }
+
+  .Cart {
+    width: calc((100% - 350px) - 45px);
+    margin-right: 45px;
+  }
+
+  .CheckoutPanel {
+    position: relative;
+    width: 350px;
+  }
+}
