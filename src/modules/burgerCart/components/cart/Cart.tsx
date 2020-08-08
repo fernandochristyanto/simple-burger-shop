@@ -32,6 +32,7 @@ const Cart = () => {
             key={index}
             ingredients={item.burger.ingredients}
             price={item.burger.burgerPrice}
+            quantity={item.quantity}
           />
         ))}
       </div>
