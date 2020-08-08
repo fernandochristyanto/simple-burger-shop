@@ -10,6 +10,23 @@
   bottom: 0;
 }
 
+.IngredientCardWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.IngredientCard {
+  width: 8rem;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 @media (min-width: 1024px) {
   .CartWrapper {
     min-width: 1024px;
@@ -27,5 +44,9 @@
   .CheckoutPanel {
     position: relative;
     width: 350px;
+  }
+
+  .IngredientCard {
+    margin-bottom: 1rem;
   }
 }
