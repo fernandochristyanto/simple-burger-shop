@@ -3,6 +3,7 @@ import { IBurgerCart } from "../../../interfaces/states/IBurgerCart";
 
 declare interface IBurgerCartFetch {
   type: typeof BURGER_CART_FETCH
+  username: string
 }
 
 declare interface IBurgerCartFetchSuccess {

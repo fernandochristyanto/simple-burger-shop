@@ -5,7 +5,8 @@ import { Card, CardBody } from '../../../../../components/card';
 import Button from '../../../../../components/button/Button';
 
 declare interface ICheckoutPanelProps {
-  shoppingCart: any[]
+  shoppingCart?: any[]
+  totalPrice?: number
 }
 
 const CheckoutPanel = (props: ICheckoutPanelProps) => {
@@ -17,17 +18,17 @@ const CheckoutPanel = (props: ICheckoutPanelProps) => {
             <CardBody>
               Order Summary
                 <div>
-                {props.shoppingCart.map((item, index) => (
+                {props.shoppingCart?.map((item, index) => (
                   <div className={classes.OrderSummaryItem} key={index}>
                     <div>${item.burger.burgerPrice} x {item.quantity}</div>
                     <div>${item.itemPrice}</div>
                   </div>
                 ))}
                 <div className={classes.OrderSummaryItem}>
-                  <div>${props.shoppingCart.reduce((price, item) => price + item.itemPrice, 0)}</div>
+                  <div>${props.totalPrice}</div>
                 </div>
                 <Button variant="primary" width="100%">
-                  Checkout ({props.shoppingCart.reduce((quantity, item) => quantity + item.quantity, 0)})
+                  Checkout ({props.shoppingCart?.reduce((quantity, item) => quantity + item.quantity, 0)})
                   </Button>
               </div>
             </CardBody>
