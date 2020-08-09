@@ -49,6 +49,10 @@
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
+.Borderless {
+  border: none;
+}
+
 @media (min-width: 576px) {
   .CardGroup {
     display: flex;
