@@ -2,12 +2,24 @@
   width: 100%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
-.CheckoutPanel {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+.Cart {
+  border-width: 10px 0;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05);
+  margin: auto;
+}
+
+.CartItem {
+  border-width: 0 0 1px 0;
+  border-color: #cccccc;
+  border-style: solid;
+}
+
+.CartItem:last-child {
+  border: none;
 }
 
 .CartItemBody {
@@ -56,6 +68,37 @@
   box-sizing: border-box;
 }
 
+.CheckoutPanel {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
+}
+
+.SidePanel {
+  position: sticky;
+  top: 5rem;
+}
+
+.OrderSummary {
+  border-radius: 7px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+.OrderSummaryItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.OrderSummaryItem:last-of-type {
+  border-top: 1px solid #cccccc;
+  justify-content: flex-end;
+  font-weight: bold;
+  color: #d23636;
+}
+
 @media (min-width: 1024px) {
   .CartWrapper {
     min-width: 1024px;
@@ -63,6 +106,7 @@
     padding: 0 20px;
     margin: auto;
     box-sizing: border-box;
+    padding-bottom: 0 !important;
   }
 
   .Cart {
@@ -70,12 +114,13 @@
     margin-right: 45px;
   }
 
-  .CheckoutPanel {
-    position: relative;
-    width: 350px;
-  }
-
   .IngredientCard {
     margin-bottom: 1rem;
+  }
+
+  .CheckoutPanel {
+    margin-top: 10px;
+    position: relative;
+    width: 350px;
   }
 }

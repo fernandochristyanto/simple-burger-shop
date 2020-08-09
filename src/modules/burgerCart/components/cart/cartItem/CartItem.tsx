@@ -1,5 +1,6 @@
 import React from 'react'
 
+import classes from '../Cart.module.css';
 import { Card, CardBody } from '../../../../../components/card';
 import CartItemBody from './cartItemBody/CartItemBody';
 import CartItemFooter from './cartItemFooter/CartItemFooter';
@@ -12,18 +13,20 @@ declare interface ICartItem {
 
 const CartItem = (props: ICartItem) => {
   return (
-    <Card>
-      <CardBody>
-        <CartItemBody
-          ingredients={props.ingredients}
-          price={props.price}
-        />
+    <div className={classes.CartItem}>
+      <Card borderless>
+        <CardBody>
+          <CartItemBody
+            ingredients={props.ingredients}
+            price={props.price}
+          />
 
-        <CartItemFooter
-          quantity={props.quantity}
-        />
-      </CardBody>
-    </Card>
+          <CartItemFooter
+            quantity={props.quantity}
+          />
+        </CardBody>
+      </Card>
+    </div>
   )
 }
 
