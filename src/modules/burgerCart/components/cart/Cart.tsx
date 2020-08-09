@@ -4,6 +4,8 @@ import classes from './Cart.module.css';
 import CartItem from './cartItem/CartItem';
 import CheckoutPanel from './checkoutPanel/CheckoutPanel';
 import Burger from '../../../../components/burger/Burger';
+import { connect } from 'react-redux';
+import { burgerCartFetch } from '../../redux/actions';
 
 const shoppingCart = [
   {
@@ -48,7 +50,12 @@ const shoppingCart = [
   }
 ];
 
-const Cart = () => {
+declare interface ICartProps {
+  onBurgerCartFetch: () => Promise<void>
+}
+
+const Cart = (props: ICartProps) => {
+  props.onBurgerCartFetch();
   const paddingSpace = 184.7 + (21.6 * shoppingCart.length) + 20;
   return (
     <div className={classes.CartWrapper} style={{ paddingBottom: paddingSpace }}>
@@ -71,4 +78,10 @@ const Cart = () => {
   )
 }
 
-export default Cart;
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    onBurgerCartFetch: () => dispatch(burgerCartFetch()),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Cart);
