@@ -1,5 +1,4 @@
-import { IBurgerCart } from "../../../interfaces/states/IBurgerCart";
-
+import { IBurgerCart } from "../../../interfaces";
 
 export declare interface IBurgerCartFetchParam {
   username: string

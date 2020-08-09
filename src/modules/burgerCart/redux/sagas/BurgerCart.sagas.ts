@@ -1,4 +1,4 @@
-import { BurgerCartActions } from "../../interaces";
+import { BurgerCartActions } from "../../interfaces";
 import { put, takeLatest } from "redux-saga/effects";
 import { burgerCartFetchFailed, burgerCartFetchSuccess } from "../actions";
 import { BURGER_CART_FETCH } from "../../contants";

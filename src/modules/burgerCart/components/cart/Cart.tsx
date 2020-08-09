@@ -6,8 +6,7 @@ import CheckoutPanel from './checkoutPanel/CheckoutPanel';
 import Burger from '../../../../components/burger/Burger';
 import { connect } from 'react-redux';
 import { burgerCartFetch } from '../../redux/actions';
-import { IBurgerCart } from '../../../../interfaces/states/IBurgerCart';
-import { IDefaultState, IAuth } from '../../../../interfaces';
+import { IDefaultState, IAuth, IBurgerCart } from '../../../../interfaces';
 
 declare interface ICartProps {
   auth: IDefaultState<IAuth>

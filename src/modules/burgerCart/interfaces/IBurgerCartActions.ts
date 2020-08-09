@@ -1,5 +1,5 @@
 import { BURGER_CART_FETCH, BURGER_CART_FETCH_SUCCESS, BURGER_CART_FETCH_FAILED } from "../contants";
-import { IBurgerCart } from "../../../interfaces/states/IBurgerCart";
+import { IBurgerCart } from "../../../interfaces";
 
 declare interface IBurgerCartFetch {
   type: typeof BURGER_CART_FETCH

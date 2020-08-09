@@ -1,5 +1,4 @@
-import { IDefaultState } from "../../../interfaces";
-import { IBurgerCart } from "../../../interfaces/states/IBurgerCart";
+import { IDefaultState, IBurgerCart } from "../../../interfaces";
 import initialDefaultState from "../../../constants/InitialDefaultState";
 
 export const BURGER_CART_FETCH = 'BURGER_CART_FETCH';

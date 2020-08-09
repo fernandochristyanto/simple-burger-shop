@@ -1,7 +1,6 @@
-import { IDefaultState } from "../../../../interfaces";
-import { IBurgerCart } from "../../../../interfaces/states/IBurgerCart";
+import { IDefaultState, IBurgerCart } from "../../../../interfaces";
 import { initialBurgerCartState, BURGER_CART_FETCH, BURGER_CART_FETCH_SUCCESS, BURGER_CART_FETCH_FAILED } from "../../contants";
-import { BurgerCartActions } from "../../interaces";
+import { BurgerCartActions } from "../../interfaces";
 
 export const burgerCartReducer = (
   state: IDefaultState<IBurgerCart> = initialBurgerCartState,
