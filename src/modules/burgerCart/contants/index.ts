@@ -4,6 +4,9 @@ import initialDefaultState from "../../../constants/InitialDefaultState";
 export const BURGER_CART_FETCH = 'BURGER_CART_FETCH';
 export const BURGER_CART_FETCH_SUCCESS = 'BURGER_CART_FETCH_SUCCESS';
 export const BURGER_CART_FETCH_FAILED = 'BURGER_CART_FETCH_FAILED';
+export const CART_ITEM_SET_QTY = 'CART_ITEM_SET_QTY';
+export const CART_ITEM_SET_QTY_SUCCESS = 'CART_ITEM_SET_QTY_SUCCESS';
+export const CART_ITEM_SET_QTY_FAILED = 'CART_ITEM_SET_QTY_FAILED';
 
 export const initialBurgerCartState: IDefaultState<IBurgerCart> = {
   ...initialDefaultState,

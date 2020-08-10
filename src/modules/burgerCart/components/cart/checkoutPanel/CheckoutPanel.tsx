@@ -20,7 +20,7 @@ const CheckoutPanel = (props: ICheckoutPanelProps) => {
                 <div>
                 {props.shoppingCart?.map((item, index) => (
                   <div className={classes.OrderSummaryItem} key={index}>
-                    <div>${item.burger.burgerPrice} x {item.quantity}</div>
+                    <div>${item.burger.price} x {item.quantity}</div>
                     <div>${item.itemPrice}</div>
                   </div>
                 ))}

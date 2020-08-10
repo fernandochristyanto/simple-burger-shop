@@ -23,6 +23,7 @@ const CartItem = (props: ICartItem) => {
 
           <CartItemFooter
             quantity={props.quantity}
+            ingredients={props.ingredients}
           />
         </CardBody>
       </Card>
