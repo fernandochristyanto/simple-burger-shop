@@ -1,4 +1,5 @@
 import { IDefaultState, IBurgerBuilder } from "../../../interfaces";
+import { RouteComponentProps } from "react-router-dom";
 
 export declare interface IBuildControlProps {
   ingredient: string
@@ -6,7 +7,9 @@ export declare interface IBuildControlProps {
 };
 
 export declare interface IOrderControlsProps {
+  burger: IBurgerBuilder
   onResetBurger: () => Promise<void>
+  onAddToCart: (burger: IBurgerBuilder) => Promise<void>
 }
 
 export declare interface IBurgerBuilderProps {

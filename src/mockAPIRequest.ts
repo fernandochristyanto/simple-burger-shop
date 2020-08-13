@@ -1,3 +1,5 @@
+import { countTotalPrice } from "./utilities/BurgerCartUtil";
+
 const authData = [
   {
     username: 'coposaja',
@@ -16,7 +18,7 @@ const authData = [
   },
 ];
 
-const cartData = [
+let cartData = [
   {
     username: 'coposaja',
     cart: {
@@ -73,6 +75,7 @@ const mockAPIRequest = async (
 ) => {
   return new Promise((resolve, reject) => setTimeout(() => {
     let retData;
+    let username: string;
     switch (route) {
       case 'auth':
         retData = authData.find((x) => x.username === param.username && x.password === param.password);
@@ -82,14 +85,46 @@ const mockAPIRequest = async (
         });
         break;
 
-      case 'cart':
-        let username = param.username ? param.username : 'coposaja';
+      case 'Cart':
+        username = param.username ? param.username : 'coposaja';
         retData = cartData.find((x) => x.username === username)?.cart;
         resolve({
           status: retData ? 200 : 500,
           res: retData,
         })
         break;
+
+      case 'Cart/AddItem':
+        username = param.username ? param.username : 'coposaja';
+        const cart = cartData.find((x) => x.username === username)?.cart;
+        const index = cart?.items.findIndex((x) => x.burger.ingredients === param.burger.ingredients) ?? 0;
+
+        if (cart) {
+          if (index < 0) {
+            cart.items.push({
+              burger: param.burger,
+              quantity: 1,
+              itemPrice: param.burger.price,
+            });
+          } else {
+            let item = cart.items.find((x) => x.burger.ingredients === param.burger.ingredients);
+            if (item) {
+              item = {
+                ...item,
+                itemPrice: item.burger.price * (item.quantity + 1),
+                quantity: item.quantity + 1,
+              }
+              cart.items[index] = item;
+            }
+          }
+          cart.totalPrice = countTotalPrice(cart.items);
+        }
+
+        resolve({
+          status: cart ? 200 : 500,
+        });
+        break;
+
       default:
         return {};
     }

@@ -2,7 +2,8 @@ import { IDefaultState, IBurgerCart } from "../../../../interfaces";
 import {
   initialBurgerCartState,
   BURGER_CART_FETCH, BURGER_CART_FETCH_SUCCESS, BURGER_CART_FETCH_FAILED,
-  CART_ITEM_SET_QTY, CART_ITEM_SET_QTY_SUCCESS, CART_ITEM_SET_QTY_FAILED
+  CART_ITEM_SET_QTY, CART_ITEM_SET_QTY_SUCCESS, CART_ITEM_SET_QTY_FAILED,
+  CART_ADD_ITEM, CART_ADD_ITEM_FAILED, CART_ADD_ITEM_SUCCESS
 } from "../../contants";
 import { BurgerCartActions } from "../../interfaces";
 import { countTotalPrice } from "../../../../utilities/BurgerCartUtil";
@@ -18,6 +19,9 @@ export const burgerCartReducer = (
     case CART_ITEM_SET_QTY: return cartItemSetQty(state, action);
     case CART_ITEM_SET_QTY_SUCCESS: return cartItemSetQtySuccess(state, action);
     case CART_ITEM_SET_QTY_FAILED: return cartItemSetQtyFailed(state, action);
+    case CART_ADD_ITEM: return cartAddItem(state, action);
+    case CART_ADD_ITEM_SUCCESS: return cartAddItemSuccess(state, action);
+    case CART_ADD_ITEM_FAILED: return cartAddItemFailed(state, action);
 
     default: return state;
   }
@@ -118,6 +122,51 @@ const cartItemSetQtyFailed = (
   action: BurgerCartActions
 ): IDefaultState<IBurgerCart> => {
   if (action.type === CART_ITEM_SET_QTY_FAILED) {
+    return {
+      ...state,
+      fetch: true,
+      action: action.type,
+      err: action.error,
+    }
+  }
+  return state;
+}
+
+const cartAddItem = (
+  state: IDefaultState<IBurgerCart>,
+  action: BurgerCartActions
+): IDefaultState<IBurgerCart> => {
+  if (action.type === CART_ADD_ITEM) {
+    return {
+      ...state,
+      fetch: true,
+      action: action.type,
+      err: null,
+    }
+  }
+  return state;
+}
+
+const cartAddItemSuccess = (
+  state: IDefaultState<IBurgerCart>,
+  action: BurgerCartActions
+): IDefaultState<IBurgerCart> => {
+  if (action.type === CART_ADD_ITEM_SUCCESS) {
+    return {
+      ...state,
+      fetch: false,
+      action: action.type,
+      err: null,
+    }
+  }
+  return state;
+}
+
+const cartAddItemFailed = (
+  state: IDefaultState<IBurgerCart>,
+  action: BurgerCartActions
+): IDefaultState<IBurgerCart> => {
+  if (action.type === CART_ADD_ITEM_FAILED) {
     return {
       ...state,
       fetch: true,

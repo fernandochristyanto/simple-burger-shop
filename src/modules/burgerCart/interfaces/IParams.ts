@@ -1,4 +1,4 @@
-import { IBurgerCart, ICartItem } from "../../../interfaces";
+import { IBurgerCart, ICartItem, IBurgerBuilder } from "../../../interfaces";
 
 export declare interface IBurgerCartFetchParam {
   username: string
@@ -13,4 +13,8 @@ export declare interface ICartItemSetQtyParam {
 
 export declare interface ICartItemSetQtySuccessParam {
   item: ICartItem
+}
+
+export declare interface ICartAddItemParam {
+  burger: IBurgerBuilder
 }
