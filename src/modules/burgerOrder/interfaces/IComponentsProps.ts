@@ -6,7 +6,7 @@ export declare interface IBuildControlProps {
   onAddIngredient: (ingredient: string) => Promise<void>
 };
 
-export declare interface IOrderControlsProps {
+export declare interface IOrderControlsProps extends RouteComponentProps {
   burger: IBurgerBuilder
   onResetBurger: () => Promise<void>
   onAddToCart: (burger: IBurgerBuilder) => Promise<void>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import classes from '../BurgerBuilder.module.css';
 import Button from '../../../../../components/button/Button';
@@ -18,6 +19,8 @@ const OrderControls = (props: IOrderControlsProps) => {
         Reset Burger
       </Button>
       <Button
+        onClick={() => { props.onAddToCart(props.burger); props.history.push('/burger-cart') }}
+        disabled={props.burger.ingredients ? false : true}
         variant="secondary"
       >
         Buy Now
@@ -46,4 +49,4 @@ const mapStateToProps = (state: any) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderControls);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OrderControls));
