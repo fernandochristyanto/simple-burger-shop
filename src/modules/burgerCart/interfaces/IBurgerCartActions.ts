@@ -7,7 +7,6 @@ import { IBurgerCart, ICartItem, IBurgerBuilder } from "../../../interfaces";
 
 declare interface IBurgerCartFetch {
   type: typeof BURGER_CART_FETCH
-  username: string
 }
 
 declare interface IBurgerCartFetchSuccess {

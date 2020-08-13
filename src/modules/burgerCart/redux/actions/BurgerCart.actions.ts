@@ -5,14 +5,13 @@ import {
   CART_ADD_ITEM, CART_ADD_ITEM_SUCCESS, CART_ADD_ITEM_FAILED
 } from "../../contants";
 import {
-  IBurgerCartFetchSuccessParam, IBurgerCartFetchParam,
+  IBurgerCartFetchSuccessParam,
   ICartItemSetQtyParam, ICartItemSetQtySuccessParam,
   ICartAddItemParam
 } from "../../interfaces/IParams";
 
-export const burgerCartFetch = (param: IBurgerCartFetchParam): BurgerCartActions => ({
-  type: BURGER_CART_FETCH,
-  username: param.username
+export const burgerCartFetch = (): BurgerCartActions => ({
+  type: BURGER_CART_FETCH
 });
 export const burgerCartFetchSuccess = (param: IBurgerCartFetchSuccessParam): BurgerCartActions => ({
   type: BURGER_CART_FETCH_SUCCESS,

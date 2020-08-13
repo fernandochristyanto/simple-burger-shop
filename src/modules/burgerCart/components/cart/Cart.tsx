@@ -6,18 +6,16 @@ import CheckoutPanel from './checkoutPanel/CheckoutPanel';
 import Burger from '../../../../components/burger/Burger';
 import { connect } from 'react-redux';
 import { burgerCartFetch } from '../../redux/actions';
-import { IDefaultState, IAuth, IBurgerCart } from '../../../../interfaces';
+import { IDefaultState, IBurgerCart } from '../../../../interfaces';
 
 declare interface ICartProps {
-  auth: IDefaultState<IAuth>
   burgerCart: IDefaultState<IBurgerCart>
-  onBurgerCartFetch: (username: string) => Promise<void>
+  onBurgerCartFetch: () => Promise<void>
 }
 
 class Cart extends Component<ICartProps> {
   componentDidMount() {
-    const { auth } = this.props;
-    this.props.onBurgerCartFetch(auth.res?.username ?? '');
+    this.props.onBurgerCartFetch();
   }
 
   renderCart = () => {
@@ -53,13 +51,12 @@ class Cart extends Component<ICartProps> {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-    onBurgerCartFetch: (username: string) => dispatch(burgerCartFetch({ username: username })),
+    onBurgerCartFetch: () => dispatch(burgerCartFetch()),
   }
 }
 
 const mapStateToProps = (state: any) => {
   return {
-    auth: state.auth,
     burgerCart: state.burgerCart,
   }
 }
